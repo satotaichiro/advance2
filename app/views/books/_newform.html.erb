@@ -1,3 +1,10 @@
+<div class="row">
+	<% if @book.errors.any? %>
+     <%= @book.errors.count %> errors prohibited this book from being saved:
+       <% @book.errors.full_messages.each do |message| %>
+         <%= message %>
+         <% end %>
+       <% end %>
 <%= form_for(book) do |f| %>
 	<div class="field row">
 		<%= f.label :title %>
@@ -13,3 +20,4 @@
 		<%= f.submit class: "btn btn-primary col-xs-12" %>
 	</div>
 <% end %>
+</div>
