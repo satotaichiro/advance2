@@ -5,6 +5,8 @@ before_action :baria_user, only: [:edit, :update]
   def show
   	@book = Book.find(params[:id])
     @favorite = Favorite.new
+    @comments = @book.book_comments
+    @comment = BookComment.new
   end
 
   def index
